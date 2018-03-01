@@ -64,9 +64,9 @@ public class LinkedList<T> {
         } if (index == 0){
             head = head.getNextNode();
         } else {
-            Node parent = getNodeAt(index - 1);
-            Node toRemove = parent.getNextNode();
-            parent.setNextNode(toRemove.getNextNode());
+            Node prev = getNodeAt(index - 1);
+            Node toRemove = prev.getNextNode();
+            prev.setNextNode(toRemove.getNextNode());
             toRemove.setNextNode(null);
         }
         length--;
